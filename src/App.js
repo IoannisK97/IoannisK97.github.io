@@ -95,7 +95,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Gradient Descent Interface</h1>
+      <h1 className='header'>Gradient Descent Interface</h1>
 
       <label className='label'>
         Function 'x':
@@ -154,16 +154,18 @@ const App = () => {
         />
       </label>
 
-      <button className="button" onClick={optimizeFunction}>Optimize Function</button>
+      <div className='header'>
+        <button className="button" onClick={optimizeFunction}>Optimize Function</button>
+      </div>
 
-      <div id='plot'>
+      <div id='plot' className="plot-container">
         {plotData && <Plot data={plotData} layout={plotLayout} key={plotData.length} />}
       </div>
 
       <div>
       {currentPoint  &&(
-        <div>
-          <p>Iteration: {iteration}</p> 
+        <div className='header'> 
+          <p >Iteration: {iteration}</p> 
           <p>Current Point: ({currentPoint.x[0]}, {currentPoint.y[0]})</p>
           
         </div>
